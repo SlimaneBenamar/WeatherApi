@@ -10,6 +10,7 @@ import { WeatherService } from 'src/app/service/weather.service';
 export class WeatherComponent implements OnInit {
 
   title = 'Weather APP';
+  panelOpenState = false;
   cityName!: string;
   showCurrent: boolean = false;
   weatherDetails: WeatherData = new WeatherData();

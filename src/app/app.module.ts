@@ -11,6 +11,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     MatButtonModule,
     MatTableModule,
+    MatExpansionModule,
     MatInputModule,
     HttpClientModule,
     BrowserAnimationsModule
