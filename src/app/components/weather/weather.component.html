@@ -7,22 +7,26 @@
             </tr>
             <tr>
                 <td>
-                    <mat-form-field  appearance="fill">
-                        <input type="search" #userInput placeholder="Entrer un nom de ville">
-                    </mat-form-field >
-                    <button mat-raised-button color="" (click)="getCity(userInput.value)">Recherche</button>
+                    <div appearance="fill">
+                        <input type="text" #userInput placeholder="Entrer un nom de ville">
+                    </div>
+                    
                 </td> 
-            </tr> 
-            </table>
-    
-    </form>
-    <mat-card>
-        <mat-card-header>
-          <mat-card-title>{{weather.name}}</mat-card-title>
-          <mat-card-subtitle>{{weather.sys.country}}</mat-card-subtitle>
-        </mat-card-header>
-        <img src="assets/{{ weather.weather[0].icon}}.png" alt="">
-        <span style="font-size: 5em;">  {{weather.main.temp  | number: '1.0-0'}} &#176; C</span>
+            </tr>
+                <td>
+                    <mat-form-field>
+                        <button mat-raised-button color="" (click)="getCity(userInput.value)">Recherche</button>
+                    </mat-form-field>
+                </td>  
+        </table>
+        <h2>{{weather.name}}, {{weather.sys.country}}</h2>
+
+        <div>
+            <span><img src="assets/{{ weather.weather[0].icon}}.png" alt="01d.png"></span>
+                <span style="font-size: 7em;">{{weather.main.temp  | number: '1.0-0'}} &#176;C</span>
+                <br><p class="">{{ weather.weather[0].description}}</p>
+        </div>
+
         <table>
             <tbody>
                 <tr>
@@ -42,9 +46,5 @@
                 </tr>
             </tbody>
         </table>
-        <mat-card-content>
-          <p>
-            {{ weather.weather[0].description}}
-          </p>
-        </mat-card-content>
-      </mat-card>
+    </form>        
+            
