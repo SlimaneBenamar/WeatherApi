@@ -1,0 +1,47 @@
+    <form class="example-form">    
+        <table>
+            <tr>
+                <td>
+                    <h1>{{title}}</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-form-field  appearance="fill">
+                        <input type="search" #userInput placeholder="Entrer un nom de ville">
+                    </mat-form-field >
+                </td> 
+            </tr>
+                <td>
+
+                        <button mat-raised-button color="" (click)="getCity(userInput.value)">Recherche</button>
+                </td>  
+        </table>
+        <h2>{{weather.name}}, {{weather.sys.country}}</h2>
+
+    <div>
+        <span><img src="assets/{{ weather.weather[0].icon}}.png" alt="01d.png"></span>
+        <span>{{weather.main.temp  | number: '1.0-0'}} &#176; C</span>
+            <p>{{ weather.weather[0].description}}</p>
+            
+    </div>
+    <table>
+        <tbody>
+            <tr>
+                <td>Humidity</td><td>{{weather.main.humidity}}%</td>
+            </tr>
+            <tr>
+                <td>Pressure</td><td>{{weather.main.pressure}} hpa</td>
+            </tr>
+            <tr>
+                <td>Sunrise</td><td>{{weather.sys.sunrise * 1000 | date:'H:mm'}}</td>
+            </tr>
+            <tr>
+                <td>Sunset</td><td>{{weather.sys.sunset * 1000 | date:'H:mm'}}</td>
+            </tr>
+            <tr>
+                <td>Geo coords</td><td>[{{weather.coord.lat}}, {{weather.coord.lon}}]</td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
